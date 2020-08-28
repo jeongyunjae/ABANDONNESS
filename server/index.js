@@ -1,10 +1,10 @@
 const express = require("express"); //express 모듈 가져오기
 const app = express(); //새로운 express() 앱 생성
 let { User } = require("./models/User");
+const cors = require("cors");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
-const PORT = process.env.PORT || 3000;
 const config = require("./config/key");
 const { auth } = require("./middleware/auth");
 
@@ -30,11 +30,9 @@ if (process.env.NODE_ENV === "production") {
   // index.html for all page routes
 }
 
-app.get("/", function (req, res) {
-  res.send("Hello World!!!");
-});
+app.get("/", (req, res) => res.send("안농"));
 
-app.get("/api/hello", (req, res) => res.send("Hello World!~~ "));
+app.get("/api/hello", (req, res) => res.send("my test"));
 
 app.post("/api/users/register", (req, res) => {
   //회원 가입 할떄 필요한 정보들을  client에서 가져오면
@@ -108,6 +106,4 @@ app.get("/api/users/logout", auth, (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`Server Running at ${PORT}`);
-});
+const PORT = 5000;
