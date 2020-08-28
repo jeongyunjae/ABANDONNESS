@@ -2,6 +2,7 @@ const express = require("express"); //express 모듈 가져오기
 const app = express(); //새로운 express() 앱 생성
 let { User } = require("./models/User");
 const cors = require("cors");
+const PORT = process.env.PORT || 5000;
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
@@ -106,4 +107,4 @@ app.get("/api/users/logout", auth, (req, res) => {
   });
 });
 
-const PORT = 5000;
+app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));
