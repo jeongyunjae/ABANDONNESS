@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import Axios from "axios";
 
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
+import "./LandingPage.css";
 
 function LandingPage() {
   useEffect(() => {
@@ -9,7 +11,13 @@ function LandingPage() {
       console.log(response.data);
     });
   }, []);
-  return <Header />;
+  return (
+    <div>
+      <Header />
+      <div className="content"></div>
+      <Footer />
+    </div>
+  );
 }
 
 export default LandingPage;
