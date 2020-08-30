@@ -10,22 +10,17 @@
 
 .header {
   position: fixed;
-  top: auto;
-  left: 0;
-  width: 100%;
   display: block;
-  font-weight: 500;
-  background-color: white;
+  width: 100%;
   z-index: 1040;
-  text-align: center;
+  background-color: white;
 }
 
 .header .auth {
   position: absolute;
-  top: 10px;
-  padding-top: 10px;
-  margin-right: 20px;
   display: flex;
+  top: 25px;
+  margin-right: 20px;
   right: 0;
 }
 
@@ -33,13 +28,15 @@
   margin: 0 10px;
   font-size: 12px;
   font-weight: 500;
+  list-style: none;
+  color: #50bcdf;
 }
 
 .header .container {
-  height: 60px;
-  line-height: 60px;
-  padding: 0 15px;
   display: flex;
+  height: 65px;
+  line-height: 65px;
+  padding: 0 15px;
   flex-direction: row;
   box-shadow: 0 1px 2px 0 rgba(40, 50, 60, 0.2);
 }
@@ -48,6 +45,7 @@
   width: 15%;
   font-size: 22px;
   font-weight: 700;
+  text-align: center;
   color: #50bcdf;
 }
 
@@ -62,15 +60,13 @@ nav .menu {
   justify-content: space-between;
 }
 
-li {
+.menu > li {
   font-size: 14px;
   font-weight: 600;
   list-style: none;
 }
 
-.auth > li {
-  color: #50bcdf;
-}
+/* under code will go responsive */
 
 @media (max-width: 1024px) {
   .container .header-logo {
