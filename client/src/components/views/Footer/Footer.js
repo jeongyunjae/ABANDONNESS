@@ -4,7 +4,7 @@ import "./Footer.css";
 function Footer() {
   return (
     <div className="wrapper">
-      <div className="footer"></div>
+      <div className="footer">copyright@2020</div>
     </div>
   );
 }
