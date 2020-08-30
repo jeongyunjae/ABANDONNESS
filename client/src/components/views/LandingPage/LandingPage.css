@@ -4,6 +4,8 @@
 }
 
 .content {
+  width: 100%;
+  height: 1200px;
   display: flex;
   justify-content: center;
 }

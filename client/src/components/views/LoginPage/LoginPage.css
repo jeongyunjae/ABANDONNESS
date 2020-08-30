@@ -1,13 +1,8 @@
-.whole {
+* {
   margin: 0;
   padding: 0;
 }
 
 .content {
-  padding-block-start: 20%;
-}
-
-.Login-form {
-  display: flex;
-  justify-content: center;
+  padding-top: 200px;
 }

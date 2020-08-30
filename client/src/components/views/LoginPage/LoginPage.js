@@ -5,7 +5,7 @@ import "./LoginPage.css";
 
 function LoginPage() {
   return (
-    <div className="whole">
+    <div>
       <Header />
       <div className="content">
         <div className="Login-form">

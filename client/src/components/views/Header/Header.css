@@ -4,71 +4,116 @@
 }
 
 .wrapper {
-  flex: 1;
   width: 100%;
   margin: 0 auto;
 }
 
 .header {
   position: fixed;
-  top: 0;
+  top: auto;
+  left: 0;
   width: 100%;
-  height: 70px;
-  line-height: 70px;
-  position: fixed;
-  display: flex;
-  box-shadow: 0 1px 2px 0 rgba(40, 50, 60, 0.2);
+  display: block;
   font-weight: 500;
   background-color: white;
+  z-index: 1040;
+  text-align: center;
 }
 
-.header > .header-logo {
-  width: 20%;
-  height: inherit;
-  text-align: center;
-  font-size: 21px;
+.header .auth {
+  position: absolute;
+  top: 10px;
+  padding-top: 10px;
+  margin-right: 20px;
+  display: flex;
+  right: 0;
+}
+
+.auth > li {
+  margin: 0 10px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.header .container {
+  height: 60px;
+  line-height: 60px;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 1px 2px 0 rgba(40, 50, 60, 0.2);
+}
+
+.container .header-logo {
+  width: 15%;
+  font-size: 22px;
   font-weight: 700;
   color: #50bcdf;
 }
 
-.header nav {
-  width: 60%;
+.container nav {
+  width: 70%;
   height: inherit;
 }
 
 nav .menu {
-  margin: 0 90px;
+  margin: 0 100px;
   display: flex;
   justify-content: space-between;
 }
 
 li {
   font-size: 14px;
+  font-weight: 600;
   list-style: none;
-}
-
-.header .auth-menu {
-  width: 20%;
-  height: inherit;
-}
-
-.auth-menu .auth {
-  margin: 0 40px;
-  display: flex;
 }
 
 .auth > li {
-  margin: 0 auto;
-  font-size: 14px;
-  list-style: none;
+  color: #50bcdf;
 }
 
-.content {
-  height: 1200px;
-  background-color: white;
+@media (max-width: 1024px) {
+  .container .header-logo {
+    font-size: 20px;
+  }
+
+  nav .menu {
+    margin: 0 80px;
+  }
 }
 
-.footer {
-  height: 200px;
-  background-color: bisque;
+@media (max-width: 768px) {
+  .header {
+    height: 110px;
+    line-height: 55px;
+  }
+
+  .header .container {
+    flex-direction: column;
+  }
+
+  .container .header-logo {
+    width: 100%;
+    height: 55px;
+  }
+
+  .container nav {
+    height: 55px;
+    width: 100%;
+  }
+
+  nav .menu {
+    width: auto;
+    margin: 0 70px;
+  }
+
+  li {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  nav .menu {
+    margin: 0 30px;
+  }
 }
