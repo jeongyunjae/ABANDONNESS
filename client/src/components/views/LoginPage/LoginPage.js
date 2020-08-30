@@ -22,25 +22,30 @@ const LoginPage = (props) => {
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
+
+    dispatch(loginUser(body)).then((response) => {
+      if (response.payload.loginSuccess) {
+        props.history.push("/");
+        console.log(response.payload.name);
+      }
+      if (response.payload.loginSuccess === false) {
+      }
+    });
   };
   let body = {
     email: Email,
     password: Password,
   };
 
-  dispatch(loginUser(body)).then((response) => {
-    if (response.payload.loginSuccess) {
-      props.history.push("/");
-      console.log(response.payload.name);
-    }
-  });
-
   return (
     <div>
       <Header />
       <div className="content">
         <div className="Login-form">
-          <form onSubmit={onSubmitHandler}>
+          <form
+            style={{ display: "flex", flexDirection: "column" }}
+            onSubmit={onSubmitHandler}
+          >
             <label>이메일</label>
             <input
               type="email"
@@ -56,7 +61,7 @@ const LoginPage = (props) => {
               onChange={onPasswordHandler}
             />
             <br />
-            <input type="submit" value="저장" />
+            <input type="submit" value="로그인" />
           </form>
         </div>
       </div>

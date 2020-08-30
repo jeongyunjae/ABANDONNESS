@@ -1,16 +1,21 @@
 import React from "react";
 import "./Header.css";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function Header() {
   return (
     <div className="wrapper">
       <div className="header">
         <ul className="auth">
-          <li>로그인</li>
+          <li>
+            <Link to="/login">로그인</Link>
+          </li>
           <li>회원가입</li>
         </ul>
         <div className="container">
-          <div className="header-logo">ABANDONNESS</div>
+          <div className="header-logo">
+            <Link to="/">ABANDONNESS</Link>
+          </div>
           <nav>
             <ul className="menu">
               <li>동아리소개</li>
