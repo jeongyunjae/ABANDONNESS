@@ -46,7 +46,7 @@ const LoginPage = (props) => {
             style={{ display: "flex", flexDirection: "column" }}
             onSubmit={onSubmitHandler}
           >
-            <label>이메일</label>
+            <label>이메일 주소</label>
             <input
               type="email"
               placeholder="이메일"
