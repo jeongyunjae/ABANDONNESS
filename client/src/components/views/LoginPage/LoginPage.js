@@ -9,11 +9,11 @@ import "./LoginPage.css";
 
 const LoginPage = (props) => {
   const dispatch = useDispatch();
-  const [Email, setEmail] = useState("");
+  const [UsersId, setUsersId] = useState("");
   const [Password, setPassword] = useState("");
 
-  const onEmailHandler = (event) => {
-    setEmail(event.currentTarget.value);
+  const onUsersIdHandler = (event) => {
+    setUsersId(event.currentTarget.value);
   };
 
   const onPasswordHandler = (event) => {
@@ -25,16 +25,15 @@ const LoginPage = (props) => {
 
     dispatch(loginUser(body)).then((response) => {
       if (response.payload.loginSuccess) {
-        alert("안녕하세요", response.payload.name);
+        alert("안녕하세요", response.payload.loginSuccess);
         props.history.push("/");
-        console.log(response.payload.name);
       } else {
         alert(response.payload.message);
       }
     });
   };
   let body = {
-    email: Email,
+    usersId: UsersId,
     password: Password,
   };
 
@@ -47,12 +46,12 @@ const LoginPage = (props) => {
             style={{ display: "flex", flexDirection: "column" }}
             onSubmit={onSubmitHandler}
           >
-            <label>이메일 주소</label>
+            <label>아이디</label>
             <input
-              type="email"
-              placeholder="이메일"
-              value={Email}
-              onChange={onEmailHandler}
+              type="id"
+              placeholder="아이디"
+              value={UsersId}
+              onChange={onUsersIdHandler}
             />
             <label>비밀번호</label>
             <input
@@ -71,4 +70,4 @@ const LoginPage = (props) => {
   );
 };
 
-export default LoginPage;
+export default withRouter(LoginPage);

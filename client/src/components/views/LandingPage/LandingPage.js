@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Axios from "axios";
+import { withRouter } from "react-router-dom";
 
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
@@ -20,4 +21,4 @@ function LandingPage() {
   );
 }
 
-export default LandingPage;
+export default withRouter(LandingPage);

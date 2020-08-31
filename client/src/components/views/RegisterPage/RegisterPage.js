@@ -1,22 +1,22 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-
-import { registerUser } from "../../../actions/register_actions";
+import { withRouter } from "react-router-dom";
+import { registerUser } from "../../../actions/user_actions";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import "./RegisterPage.css";
 
 function RegisterPage(props) {
   const dispatch = useDispatch();
-  const [Email, setEmail] = useState("");
+  const [UsersId, setUsersId] = useState("");
   const [Password, setPassword] = useState("");
   const [CheckPassword, setCheckPassword] = useState("");
   const [Name, setName] = useState("");
   const [InstName, setInstName] = useState("");
   const [CirclesPassword, setCirclesPassword] = useState("");
 
-  const onEmailHandler = (event) => {
-    setEmail(event.currentTarget.value);
+  const onUsersIdHandler = (event) => {
+    setUsersId(event.currentTarget.value);
   };
 
   const onPasswordHandler = (event) => {
@@ -40,7 +40,7 @@ function RegisterPage(props) {
   };
 
   let body = {
-    email: Email,
+    usersId: UsersId,
     password: Password,
     name: Name,
     instName: InstName,
@@ -50,15 +50,16 @@ function RegisterPage(props) {
   const onSubmitHandler = (event) => {
     event.preventDefault();
 
-    if (Password !== CheckPassword) {
-      alert("비밀번호가 같지 않습니다!");
-    }
-
     dispatch(registerUser(body)).then((response) => {
       if (response.payload.signUpSuccess) {
-        alert("회원가입이 완료되었습니다");
-        props.history.push("/login");
-        console.log(response.payload.name);
+        if (Password !== CheckPassword) {
+          alert("비밀번호가 같지 않습니다!");
+        } else {
+          alert("회원가입이 완료되었습니다");
+          props.history.push("/login");
+        }
+      } else {
+        alert(response.payload.message);
       }
     });
   };
@@ -72,12 +73,12 @@ function RegisterPage(props) {
             style={{ display: "flex", flexDirection: "column" }}
             onSubmit={onSubmitHandler}
           >
-            <label>이메일 주소</label>
+            <label>아이디</label>
             <input
-              type="email"
-              placeholder="이메일"
-              value={Email}
-              onChange={onEmailHandler}
+              type="id"
+              placeholder="아이디"
+              value={UsersId}
+              onChange={onUsersIdHandler}
             />
             <label>비밀번호</label>
             <input
@@ -124,4 +125,4 @@ function RegisterPage(props) {
   );
 }
 
-export default RegisterPage;
+export default withRouter(RegisterPage);
