@@ -25,10 +25,11 @@ const LoginPage = (props) => {
 
     dispatch(loginUser(body)).then((response) => {
       if (response.payload.loginSuccess) {
+        alert("안녕하세요", response.payload.name);
         props.history.push("/");
         console.log(response.payload.name);
-      }
-      if (response.payload.loginSuccess === false) {
+      } else {
+        alert(response.payload.message);
       }
     });
   };

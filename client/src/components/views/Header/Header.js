@@ -1,8 +1,19 @@
 import React from "react";
-import "./Header.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { withRouter } from "react-router";
 
-function Header() {
+import "./Header.css";
+import Axios from "axios";
+
+function Header(props) {
+  const onClickHandler = () => {
+    Axios.get("/api/users/logout").then((response) => {
+      if (response.data.success) {
+        props.history.push("/");
+        alert("로그아웃 완료");
+      }
+    });
+  };
   return (
     <div className="wrapper">
       <div className="header">
@@ -12,6 +23,11 @@ function Header() {
           </li>
           <li>
             <Link to="/register">회원가입</Link>
+          </li>
+          <li>
+            <Link onClick={onClickHandler} to="/">
+              로그아웃
+            </Link>
           </li>
         </ul>
         <div className="container">
@@ -33,4 +49,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default withRouter(Header);

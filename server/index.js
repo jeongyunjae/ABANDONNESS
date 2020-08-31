@@ -31,9 +31,9 @@ if (process.env.NODE_ENV === "production") {
   // index.html for all page routes
 }
 
-app.get("/", (req, res) => res.send("안농"));
+app.get("/", (req, res) => res.send(""));
 
-app.get("/api/hello", (req, res) => res.send("my test"));
+app.get("/api/hello", (req, res) => res.send(""));
 
 app.post("/api/users/register", (req, res) => {
   //회원 가입 할떄 필요한 정보들을  client에서 가져오면
@@ -41,15 +41,16 @@ app.post("/api/users/register", (req, res) => {
   const user = new User(req.body);
   User.findOne({ email: user.email }, (err, users) => {
     if (users) {
-      return res.json({
-        loginSuccess: false,
-        message: "동일한 이메일로 가입되어 있습니다.",
+      return res.status(400).json({
+        signUpSuccess: false,
+        message: "안돼!!!!!!",
       });
     } else {
       user.save((err, userInfo) => {
-        if (err) return res.json({ success: false, err });
+        if (err) return res.status(400).json({ success: false, err });
         return res.status(200).json({
-          success: true,
+          signUpSuccess: true,
+          name: user.name,
         });
       });
     }
@@ -100,7 +101,7 @@ app.get("/api/users/auth", auth, (req, res) => {
 
 app.get("/api/users/logout", auth, (req, res) => {
   User.findOneAndUpdate({ _id: req.user._id }, { token: "" }, (err, user) => {
-    if (err) return res.json({ success: false, err });
+    if (err) return res.status(400).json({ success: false, err });
     return res.status(200).send({
       success: true,
     });

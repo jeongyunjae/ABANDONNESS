@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
-import { loginUser } from "../../../actions/user_actions";
+import { registerUser } from "../../../actions/register_actions";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import "./RegisterPage.css";
@@ -12,6 +12,7 @@ function RegisterPage(props) {
   const [Password, setPassword] = useState("");
   const [CheckPassword, setCheckPassword] = useState("");
   const [Name, setName] = useState("");
+  const [InstName, setInstName] = useState("");
   const [CirclesPassword, setCirclesPassword] = useState("");
 
   const onEmailHandler = (event) => {
@@ -30,25 +31,36 @@ function RegisterPage(props) {
     setName(event.currentTarget.value);
   };
 
+  const onInstNameHandler = (event) => {
+    setInstName(event.currentTarget.value);
+  };
+
   const onCirclesPasswordHandler = (event) => {
     setCirclesPassword(event.currentTarget.value);
+  };
+
+  let body = {
+    email: Email,
+    password: Password,
+    name: Name,
+    instName: InstName,
+    circlesPassword: CirclesPassword,
   };
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
 
-    dispatch(loginUser(body)).then((response) => {
-      if (response.payload.loginSuccess) {
-        props.history.push("/");
+    if (Password !== CheckPassword) {
+      alert("비밀번호가 같지 않습니다!");
+    }
+
+    dispatch(registerUser(body)).then((response) => {
+      if (response.payload.signUpSuccess) {
+        alert("회원가입이 완료되었습니다");
+        props.history.push("/login");
         console.log(response.payload.name);
       }
-      if (response.payload.loginSuccess === false) {
-      }
     });
-  };
-  let body = {
-    email: Email,
-    password: Password,
   };
 
   return (
@@ -87,6 +99,13 @@ function RegisterPage(props) {
               placeholder="이름"
               value={Name}
               onChange={onNameHandler}
+            />
+            <label>하는 악기</label>
+            <input
+              type="name"
+              placeholder="악기이름(한글)"
+              value={InstName}
+              onChange={onInstNameHandler}
             />
             <label>동방비밀번호</label>
             <input
