@@ -112,6 +112,8 @@ app.get("/api/users/logout", auth, (req, res) => {
     if (err) return res.status(400).json({ success: false, err });
     return res.status(200).send({
       success: true,
+      isAuth: false,
+      isAdmin: false,
     });
   });
 });

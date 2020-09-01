@@ -1,16 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { withRouter } from "react-router";
-
-import "./Header.css";
+import { connect } from "react-redux";
 import Axios from "axios";
 
-function Header(props) {
+import "./Header.css";
+
+import { auth } from "../../../actions/user_actions";
+import { useDispatch } from "react-redux";
+
+const Header = (props) => {
+  const dispatch = useDispatch();
+  const [loginStatus, setLoginStatus] = useState();
+  const [userName, setUserName] = useState("");
+  useEffect(() => {
+    dispatch(auth()).then((response) => {
+      setLoginStatus(response.payload.isAuth);
+      setUserName(response.payload.name);
+    });
+  }, []);
+
   const onClickHandler = () => {
     Axios.get("/api/users/logout").then((response) => {
       if (response.data.success) {
+        setLoginStatus(response.data.isAuth);
+        console.log(loginStatus);
         props.history.push("/");
-        alert("로그아웃 완료");
       }
     });
   };
@@ -18,17 +33,25 @@ function Header(props) {
     <div className="wrapper">
       <div className="header">
         <ul className="auth">
-          <li>
-            <Link to="/login">로그인</Link>
-          </li>
-          <li>
-            <Link to="/register">회원가입</Link>
-          </li>
-          <li>
-            <Link onClick={onClickHandler} to="/">
-              로그아웃
-            </Link>
-          </li>
+          {loginStatus ? (
+            <div className="noListStyle">
+              <li>안녕하세요:) {userName}님</li>
+              <li>
+                <Link onClick={onClickHandler} to="/">
+                  로그아웃
+                </Link>
+              </li>
+            </div>
+          ) : (
+            <div className="noListStyle">
+              <li>
+                <Link to="/login">로그인</Link>
+              </li>
+              <li>
+                <Link to="/register">회원가입</Link>
+              </li>
+            </div>
+          )}
         </ul>
         <div className="container">
           <div className="header-logo">
@@ -47,6 +70,10 @@ function Header(props) {
       </div>
     </div>
   );
-}
+};
 
-export default withRouter(Header);
+const mapStateToProps = (state) => ({
+  userData: state.User.userData,
+});
+
+export default connect(mapStateToProps, null)(withRouter(Header));

@@ -25,7 +25,6 @@ const LoginPage = (props) => {
 
     dispatch(loginUser(body)).then((response) => {
       if (response.payload.loginSuccess) {
-        alert("안녕하세요", response.payload.loginSuccess);
         props.history.push("/");
       } else {
         alert(response.payload.message);

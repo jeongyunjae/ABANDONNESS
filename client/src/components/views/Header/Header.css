@@ -16,15 +16,15 @@
   background-color: white;
 }
 
-.header .auth {
+.noListStyle {
   position: absolute;
   display: flex;
-  top: 25px;
   margin-right: 20px;
   right: 0;
+  top: 25px;
 }
 
-.auth > li {
+.noListStyle > li {
   margin: 0 10px;
   font-size: 12px;
   font-weight: 300;
