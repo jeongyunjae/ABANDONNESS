@@ -61,9 +61,9 @@ const LoginPage = (props) => {
             />
             <input type="submit" value="로그인" />
           </form>
-          <a href="/register" className="sign-up">
+          <Link className="sign-up" to="/register">
             회원가입
-          </a>
+          </Link>
         </div>
       </div>
       <Footer />
