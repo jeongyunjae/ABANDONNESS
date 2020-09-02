@@ -38,7 +38,7 @@ const Header = (props) => {
           {loginStatus ? (
             <div className="noListStyle">
               <li>
-                안녕하세요:) <b>{userName}</b>님
+                <b>{userName}</b>님
               </li>
               <li>
                 <Link onClick={onClickHandler} to="/">
@@ -62,10 +62,7 @@ const Header = (props) => {
         <div className="container">
           <div className="header-logo">
             <Link to="/">
-              <img
-                style={{ width: "70%", height: "70%", objectFit: "contain" }}
-                src={logo4}
-              ></img>
+              <img src={logo4}></img>
             </Link>
           </div>
           <nav>

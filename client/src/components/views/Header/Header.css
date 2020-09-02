@@ -41,6 +41,12 @@
   box-shadow: 0 1px 2px 0 rgba(40, 50, 60, 0.2);
 }
 
+img {
+  width: 65%;
+  height: 65%;
+  object-fit: contain;
+}
+
 .container .header-logo {
   margin-top: 10px;
   width: 15%;
@@ -81,6 +87,11 @@ nav .menu {
   .menu > li {
     font-size: 13px;
   }
+  img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+  }
 }
 
 @media (max-width: 768px) {
@@ -118,6 +129,11 @@ nav .menu {
   .menu > li {
     font-size: 12.5px;
   }
+  img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+  }
 }
 
 @media (max-width: 576px) {
@@ -144,11 +160,6 @@ nav .menu {
     font-size: 11px;
   }
 
-  .header .auth {
-    top: 30px;
-    margin-right: 10px;
-  }
-
   .noListStyle {
     position: absolute;
     display: flex;
@@ -158,11 +169,17 @@ nav .menu {
   }
 
   .noListStyle > li {
-    margin: 0 7px;
+    margin: 0 4px;
     font-size: 8px;
     font-weight: 300;
     list-style: none;
     color: #97a1f8;
+  }
+
+  img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
   }
 }
 
