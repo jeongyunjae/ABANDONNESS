@@ -1,0 +1,51 @@
+.signup-form {
+  margin-top: 120px;
+  width: 280px;
+  letter-spacing: 0.6px;
+}
+
+.tit-signup {
+  padding: 10px;
+  margin-bottom: 10px;
+  font-weight: 900;
+  font-size: 18px;
+  text-align: center;
+  color: #333;
+}
+
+label {
+  font-size: 13px;
+  color: #333;
+}
+
+.signup-form input {
+  height: 36px;
+  margin-bottom: 18px;
+  padding-inline-start: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 12px;
+  outline: none;
+}
+
+form input[value="가입하기"] {
+  padding-inline-start: 0%;
+  height: 40px;
+  margin-top: 10px;
+  font-size: 13px;
+  border: 1px solid #97a1f8;
+  background-color: #97a1f8;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .signup-form {
+    margin-top: 180px;
+    width: 250px;
+    letter-spacing: 0.6px;
+  }
+
+  form input[value="가입하기"] {
+    margin-top: 0px;
+  }
+}

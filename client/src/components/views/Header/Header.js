@@ -4,6 +4,8 @@ import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import Axios from "axios";
 
+import logo4 from "./img/logo4.jpeg";
+
 import "./Header.css";
 
 import { auth } from "../../../actions/user_actions";
@@ -35,7 +37,9 @@ const Header = (props) => {
         <ul className="auth">
           {loginStatus ? (
             <div className="noListStyle">
-              <li>안녕하세요:) {userName}님</li>
+              <li>
+                안녕하세요:) <b>{userName}</b>님
+              </li>
               <li>
                 <Link onClick={onClickHandler} to="/">
                   로그아웃
@@ -45,7 +49,9 @@ const Header = (props) => {
           ) : (
             <div className="noListStyle">
               <li>
-                <Link to="/login">로그인</Link>
+                <Link style={{ color: "#333" }} to="/login">
+                  로그인
+                </Link>
               </li>
               <li>
                 <Link to="/register">회원가입</Link>
@@ -55,15 +61,30 @@ const Header = (props) => {
         </ul>
         <div className="container">
           <div className="header-logo">
-            <Link to="/">ABANDONNESS</Link>
+            <Link to="/">
+              <img
+                style={{ width: "70%", height: "70%", objectFit: "contain" }}
+                src={logo4}
+              ></img>
+            </Link>
           </div>
           <nav>
             <ul className="menu">
-              <li>동아리소개</li>
-              <li>지원하기</li>
-              <li>갤러리</li>
-              <li>공지사항</li>
-              <li>커뮤니티</li>
+              <li>
+                <Link to="#">동아리소개</Link>
+              </li>
+              <li>
+                <Link to="#">지원하기</Link>
+              </li>
+              <li>
+                <Link to="#">갤러리</Link>
+              </li>
+              <li>
+                <Link to="#">공지사항</Link>
+              </li>
+              <li>
+                <Link to="#">커뮤니티</Link>
+              </li>
             </ul>
           </nav>
         </div>

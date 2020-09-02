@@ -4,5 +4,65 @@
 }
 
 .content {
-  padding-top: 200px;
+  margin: 0 auto;
+}
+
+.Login-form {
+  margin-top: 120px;
+  width: 280px;
+  letter-spacing: 0.6px;
+}
+
+.tit-login {
+  margin-bottom: 20px;
+  padding: 10px;
+  font-weight: 900;
+  font-size: 19px;
+  text-align: center;
+  color: #333;
+}
+
+form input {
+  height: 42px;
+  margin-top: 10px;
+  padding-inline-start: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 12px;
+  outline: none;
+}
+
+form input[value="로그인"] {
+  padding-inline-start: 0%;
+  height: 40px;
+  margin-top: 30px;
+  font-size: 13px;
+  border: 1px solid #97a1f8;
+  background-color: #97a1f8;
+  color: white;
+}
+
+.sign-up {
+  display: inline-block;
+  width: 99.6%;
+  text-align: center;
+  line-height: 40px;
+  height: 40px;
+  margin-top: 10px;
+  border-radius: 3px;
+  font-size: 13px;
+  border: 1px solid #97a1f8;
+  background-color: white;
+}
+
+.Login-form a {
+  color: #97a1f8;
+}
+
+@media (max-width: 768px) {
+  .Login-form {
+    margin-top: 180px;
+    width: 250px;
+    letter-spacing: 0.6px;
+  }
 }

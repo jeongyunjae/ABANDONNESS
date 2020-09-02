@@ -68,47 +68,49 @@ function RegisterPage(props) {
     <div>
       <Header />
       <div className="content">
-        <div className="Login-form">
+        <div className="signup-form">
+          <div className="tit-signup">회원가입</div>
           <form
             style={{ display: "flex", flexDirection: "column" }}
             onSubmit={onSubmitHandler}
           >
             <label>아이디</label>
+
             <input
               type="id"
-              placeholder="아이디"
+              placeholder="아이디를 입력해주세요"
               value={UsersId}
               onChange={onUsersIdHandler}
             />
             <label>비밀번호</label>
             <input
               type="password"
-              placeholder="비밀번호"
+              placeholder="비밀번호를 입력해주세요"
               value={Password}
               onChange={onPasswordHandler}
             />
             <label>비밀번호 확인</label>
             <input
               type="password"
-              placeholder="비밀번호 확인"
+              placeholder="비밀번호를 한번 더 확인해주세요"
               value={CheckPassword}
               onChange={onCheckPasswordHandler}
             />
             <label>이름</label>
             <input
               type="name"
-              placeholder="이름"
+              placeholder="이름을 입력해주세요"
               value={Name}
               onChange={onNameHandler}
             />
-            <label>하는 악기</label>
+            <label>연주하는 악기</label>
             <input
               type="name"
-              placeholder="악기이름(한글)"
+              placeholder="한글로 작성해주세요"
               value={InstName}
               onChange={onInstNameHandler}
             />
-            <label>동방비밀번호</label>
+            <label>단원확인</label>
             <input
               type="password"
               placeholder="동방 비밀번호"
@@ -116,7 +118,7 @@ function RegisterPage(props) {
               onChange={onCirclesPasswordHandler}
             />
             <br />
-            <input type="submit" value="회원가입" />
+            <input type="submit" value="가입하기" />
           </form>
         </div>
       </div>

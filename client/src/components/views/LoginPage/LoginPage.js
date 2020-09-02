@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { withRouter } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import { loginUser } from "../../../actions/user_actions";
 import Header from "../Header/Header";
@@ -41,27 +42,28 @@ const LoginPage = (props) => {
       <Header />
       <div className="content">
         <div className="Login-form">
+          <div className="tit-login">로그인</div>
           <form
             style={{ display: "flex", flexDirection: "column" }}
             onSubmit={onSubmitHandler}
           >
-            <label>아이디</label>
             <input
               type="id"
-              placeholder="아이디"
+              placeholder="아이디를 입력해주세요"
               value={UsersId}
               onChange={onUsersIdHandler}
             />
-            <label>비밀번호</label>
             <input
               type="password"
-              placeholder="비밀번호"
+              placeholder="비밀번호를 입력해주세요"
               value={Password}
               onChange={onPasswordHandler}
             />
-            <br />
             <input type="submit" value="로그인" />
           </form>
+          <a href="/register" className="sign-up">
+            회원가입
+          </a>
         </div>
       </div>
       <Footer />

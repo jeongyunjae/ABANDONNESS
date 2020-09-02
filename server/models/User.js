@@ -12,6 +12,7 @@ const userSchema = mongoose.Schema({
     type: String,
     trim: true, //스페이스를 없애주는 역할
     unique: 1,
+    minlength: 5,
   },
   password: {
     type: String,
