@@ -56,7 +56,7 @@
 }
 
 nav .menu {
-  margin: 0 130px;
+  margin: 0 100px;
   display: flex;
   justify-content: space-between;
 }
@@ -91,6 +91,7 @@ nav .menu {
 
   .header .container {
     flex-direction: column;
+    line-height: 50px;
   }
 
   .auth > li {
