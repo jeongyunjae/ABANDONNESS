@@ -94,4 +94,4 @@ const mapStateToProps = (state) => ({
   userData: state.User.userData,
 });
 
-export default connect(mapStateToProps, null)(withRouter(Header));
+export default withRouter(Header);

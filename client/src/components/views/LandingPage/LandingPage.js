@@ -7,11 +7,6 @@ import Footer from "../Footer/Footer";
 import "./LandingPage.css";
 
 function LandingPage() {
-  useEffect(() => {
-    Axios.get("/api/hello").then((response) => {
-      console.log(response.data);
-    });
-  }, []);
   return (
     <div>
       <Header />

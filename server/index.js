@@ -31,7 +31,7 @@ if (process.env.NODE_ENV === "production") {
   // index.html for all page routes
 }
 
-app.get("/", (req, res) => res.send(""));
+app.get("/api/users", (req, res) => res.send(""));
 
 app.get("/api/hello", (req, res) => res.send(""));
 
