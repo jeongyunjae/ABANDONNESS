@@ -117,8 +117,7 @@ function RegisterPage(props) {
               value={CirclesPassword}
               onChange={onCirclesPasswordHandler}
             />
-            <br />
-            <input type="submit" value="가입하기" />
+            <button type="submit">가입하기</button>
           </form>
         </div>
       </div>

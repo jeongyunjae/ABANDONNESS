@@ -59,7 +59,7 @@ const LoginPage = (props) => {
               value={Password}
               onChange={onPasswordHandler}
             />
-            <input type="submit" value="로그인" />
+            <button type="submit">로그인</button>
           </form>
           <Link className="sign-up" to="/register">
             회원가입

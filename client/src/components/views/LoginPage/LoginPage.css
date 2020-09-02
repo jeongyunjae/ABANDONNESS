@@ -32,7 +32,7 @@ form input {
   outline: none;
 }
 
-form input[value="로그인"] {
+form button {
   padding-inline-start: 0%;
   height: 40px;
   margin-top: 30px;
