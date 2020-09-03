@@ -67,7 +67,7 @@ function RegisterPage(props) {
   return (
     <div className="wrapper">
       <Header />
-      <div className="content">
+      <div className="signup-content">
         <div className="signup-form">
           <div className="tit-signup">회원가입</div>
           <form

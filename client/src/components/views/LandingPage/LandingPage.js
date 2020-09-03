@@ -15,7 +15,7 @@ function LandingPage() {
       <div className="landing-content">
         <div className="landing-container">
           <div className="backgroundImage"></div>
-          <div className="content">
+          <div className="player-content">
             <ReactPlayer
               className="player"
               url="https://www.youtube.com/watch?v=_h8Kvg1RxD4&t=1708s"

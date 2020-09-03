@@ -40,7 +40,7 @@ const LoginPage = (props) => {
   return (
     <div className="wrapper">
       <Header />
-      <div className="content">
+      <div className="login-content">
         <div className="Login-form">
           <div className="tit-login">로그인</div>
           <form
