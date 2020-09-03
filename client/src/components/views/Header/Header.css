@@ -104,8 +104,8 @@ span {
   .header {
     height: 110px;
     line-height: 55px;
+    background-color: rgb(32, 32, 32);
   }
-
   .noListStyle > li {
     font-size: 11px;
   }

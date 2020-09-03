@@ -12,13 +12,17 @@ function LandingPage() {
   return (
     <div className="wrapper">
       <Header />
-      <div className="backgroundImage"></div>
-      <div className="content">
-        <ReactPlayer
-          className="player"
-          url="https://www.youtube.com/watch?v=_h8Kvg1RxD4&t=1708s"
-          controls
-        />
+      <div className="landing-content">
+        <div className="landing-container">
+          <div className="backgroundImage"></div>
+          <div className="content">
+            <ReactPlayer
+              className="player"
+              url="https://www.youtube.com/watch?v=_h8Kvg1RxD4&t=1708s"
+              controls
+            />
+          </div>
+        </div>
       </div>
       <Footer />
     </div>

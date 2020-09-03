@@ -1,6 +1,6 @@
 .about-content {
   width: 100%;
-  height: 2000px;
+  height: 1000px;
   background-color: #e2e2e2;
   display: flex;
 }
@@ -9,7 +9,6 @@
   width: 60%;
   margin: 0 auto;
   height: inherit;
-  margin-top: 74px;
 }
 
 .about-us {
@@ -18,7 +17,7 @@
 
 .about-us > .about-image {
   position: relative;
-  margin: 50px auto;
+  margin: 100px auto;
   margin-bottom: 40px;
   width: 100%;
   padding-top: 67.4%;
@@ -42,4 +41,27 @@ p {
   padding: 4px 0;
   color: #4b4b4b;
   font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    width: 80%;
+  }
+
+  .about-us > .about-image {
+    margin-top: 140px;
+    margin-bottom: 25px;
+  }
+
+  .about-us .explain-container {
+    margin: 0 5px;
+  }
+
+  .explain-container .aban1 {
+    font-size: 16px;
+  }
+
+  p {
+    font-size: 12px;
+  }
 }
