@@ -8,7 +8,7 @@
 }
 
 .Login-form {
-  margin-top: 120px;
+  margin-bottom: 300px;
   width: 280px;
   letter-spacing: 0.6px;
 }
@@ -37,8 +37,8 @@ form button {
   height: 40px;
   margin-top: 30px;
   font-size: 13px;
-  border: 1px solid #97a1f8;
-  background-color: #97a1f8;
+  border: 1px solid #202020;
+  background-color: #202020;
   color: white;
 }
 
@@ -51,17 +51,16 @@ form button {
   margin-top: 10px;
   border-radius: 3px;
   font-size: 13px;
-  border: 1px solid #97a1f8;
+  border: 1px solid #202020;
   background-color: white;
 }
 
 .Login-form a {
-  color: #97a1f8;
+  color: #202020;
 }
 
 @media (max-width: 768px) {
   .Login-form {
-    margin-top: 180px;
     width: 250px;
     letter-spacing: 0.6px;
   }

@@ -1,5 +1,4 @@
 .signup-form {
-  margin-top: 120px;
   width: 280px;
   letter-spacing: 0.6px;
 }
@@ -40,7 +39,6 @@ form input[value="가입하기"] {
 
 @media (max-width: 768px) {
   .signup-form {
-    margin-top: 180px;
     width: 250px;
     letter-spacing: 0.6px;
   }

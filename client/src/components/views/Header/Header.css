@@ -13,7 +13,7 @@
   display: block;
   width: 100%;
   z-index: 1040;
-  background-color: white;
+  background-color: rgba(32, 32, 32, 0.74);
 }
 
 .noListStyle {
@@ -21,22 +21,22 @@
   display: flex;
   margin-right: 20px;
   right: 0;
-  top: 25px;
+  top: 28px;
 }
 
 .noListStyle > li {
   margin: 0 6px;
-  font-size: 11px;
-  font-weight: 300;
+  font-size: 12px;
+  font-weight: 500;
   list-style: none;
-  color: #97a1f8;
+  color: #ffffff;
+  letter-spacing: 0.4px;
 }
 
 .header .container {
   display: flex;
-  height: 65px;
-  line-height: 65px;
-  padding: 0 15px;
+  height: 74px;
+  line-height: 74px;
   flex-direction: row;
   box-shadow: 0 1px 2px 0 rgba(40, 50, 60, 0.2);
 }
@@ -48,7 +48,7 @@ img {
 }
 
 .container .header-logo {
-  margin-top: 8px;
+  margin-top: 10px;
   width: 15%;
   font-size: 22px;
   font-weight: 900;
@@ -68,9 +68,15 @@ nav .menu {
 }
 
 .menu > li {
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 13px;
+  font-weight: 600;
   list-style: none;
+  letter-spacing: 1.6px;
+}
+
+span {
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 /* under code will go responsive */
@@ -100,14 +106,13 @@ nav .menu {
     line-height: 55px;
   }
 
+  .noListStyle > li {
+    font-size: 11px;
+  }
+
   .header .container {
     flex-direction: column;
     line-height: 50px;
-  }
-
-  .auth > li {
-    margin: 0 6px;
-    font-size: 11px;
   }
 
   .container .header-logo {
@@ -127,7 +132,7 @@ nav .menu {
   }
 
   .menu > li {
-    font-size: 12.5px;
+    font-size: 12px;
   }
   img {
     width: 70%;
@@ -143,21 +148,20 @@ nav .menu {
   }
 
   nav .menu {
-    margin: 0 15px;
+    margin: 6px 15px;
   }
   .header .container {
     height: 70px;
-    line-height: 50px;
+    line-height: 48px;
   }
 
   .container .header-logo {
     width: 100%;
     height: 58px;
-    font-size: 20px;
   }
 
   .menu > li {
-    font-size: 11px;
+    font-size: 10px;
   }
 
   .noListStyle {
@@ -165,15 +169,15 @@ nav .menu {
     position: absolute;
     display: flex;
     right: 0;
-    top: 25px;
+    top: 28px;
   }
 
   .noListStyle > li {
-    margin: 0 6px;
-    font-size: 8px;
-    font-weight: 300;
+    margin: 0 7px;
+    font-size: 10px;
+    font-weight: 600;
     list-style: none;
-    color: #97a1f8;
+    color: #ffffff;
   }
 
   img {
@@ -184,15 +188,15 @@ nav .menu {
 }
 
 a:link {
-  color: #978cf8;
+  color: white;
   text-decoration: none;
 }
 
 a:visited {
-  color: #978cf8;
+  color: white;
   text-decoration: none;
 }
 
 .menu a:visited {
-  color: #333;
+  color: white;
 }

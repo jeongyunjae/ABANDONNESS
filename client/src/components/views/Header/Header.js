@@ -4,7 +4,7 @@ import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import Axios from "axios";
 
-import logo4 from "./img/logo4.jpeg";
+import logo from "../../../img/logo.png";
 
 import "./Header.css";
 
@@ -38,7 +38,7 @@ const Header = (props) => {
           {loginStatus ? (
             <div className="noListStyle">
               <li>
-                <b>{userName}</b>님
+                <span>{userName}</span>님
               </li>
               <li>
                 <Link onClick={onClickHandler} to="/">
@@ -49,7 +49,7 @@ const Header = (props) => {
           ) : (
             <div className="noListStyle">
               <li>
-                <Link style={{ color: "#333" }} to="/login">
+                <Link style={{ color: "#ffffff" }} to="/login">
                   로그인
                 </Link>
               </li>
@@ -62,25 +62,25 @@ const Header = (props) => {
         <div className="container">
           <div className="header-logo">
             <Link to="/">
-              <img src={logo4}></img>
+              <img src={logo}></img>
             </Link>
           </div>
           <nav>
             <ul className="menu">
               <li>
-                <Link to="#">동아리소개</Link>
+                <Link to="/about">ABOUT US</Link>
               </li>
               <li>
-                <Link to="#">지원하기</Link>
+                <Link to="/apply">APPLY</Link>
               </li>
               <li>
-                <Link to="#">갤러리</Link>
+                <Link to="#">GALLARY</Link>
               </li>
               <li>
-                <Link to="#">공지사항</Link>
+                <Link to="#">NOTICE</Link>
               </li>
               <li>
-                <Link to="#">커뮤니티</Link>
+                <Link to="#">COMMUNITY</Link>
               </li>
             </ul>
           </nav>

@@ -65,7 +65,7 @@ function RegisterPage(props) {
   };
 
   return (
-    <div>
+    <div className="wrapper">
       <Header />
       <div className="content">
         <div className="signup-form">

@@ -38,7 +38,7 @@ const LoginPage = (props) => {
   };
 
   return (
-    <div>
+    <div className="wrapper">
       <Header />
       <div className="content">
         <div className="Login-form">
