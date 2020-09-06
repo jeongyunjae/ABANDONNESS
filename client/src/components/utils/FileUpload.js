@@ -62,7 +62,7 @@ function FileUpload() {
               src={
                 process.env.NODE_ENV === "development"
                   ? `http://localhost:5000/${image}`
-                  : `http://abandonness.herokuapp.com/${image}`
+                  : `https://abandonness.herokuapp.com/${image}`
               }
             />
           </div>
