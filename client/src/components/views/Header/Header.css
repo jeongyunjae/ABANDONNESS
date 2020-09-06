@@ -197,6 +197,6 @@ a:visited {
   text-decoration: none;
 }
 
-.menu a:visited {
-  color: white;
+.menu a:hover {
+  color: #202020;
 }

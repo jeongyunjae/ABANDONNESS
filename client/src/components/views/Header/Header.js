@@ -74,10 +74,10 @@ const Header = (props) => {
                 <Link to="/apply">지원하기</Link>
               </li>
               <li>
-                <Link to="#">갤러리</Link>
+                <Link to="/gallary">갤러리</Link>
               </li>
               <li>
-                <Link to="#">공지사항</Link>
+                <Link to="/notice">공지사항</Link>
               </li>
               <li>
                 <Link to="#">커뮤니티</Link>
