@@ -29,6 +29,7 @@ label {
 }
 
 .signup-form input {
+  width: 96.5%;
   height: 36px;
   margin-bottom: 18px;
   padding-inline-start: 10px;
@@ -38,13 +39,12 @@ label {
   outline: none;
 }
 
-form input[value="가입하기"] {
-  padding-inline-start: 0%;
+.signup-form button {
   height: 40px;
-  margin-top: 10px;
+  margin-top: 30px;
   font-size: 13px;
-  border: 1px solid #97a1f8;
-  background-color: #97a1f8;
+  border: 1px solid #202020;
+  background-color: #202020;
   color: white;
 }
 

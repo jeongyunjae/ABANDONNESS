@@ -20,6 +20,7 @@
 }
 
 .tit-login {
+  margin: 0 auto;
   margin-bottom: 20px;
   padding: 10px;
   font-weight: 900;
@@ -28,17 +29,19 @@
   color: #333;
 }
 
-form input {
+.Login-form input {
+  margin: 0 auto;
   height: 42px;
   margin-top: 10px;
   padding-inline-start: 10px;
+  width: 96%;
   border: 1px solid #ccc;
   border-radius: 3px;
   font-size: 12px;
   outline: none;
 }
 
-form button {
+.Login-form button {
   padding-inline-start: 0%;
   height: 40px;
   margin-top: 30px;

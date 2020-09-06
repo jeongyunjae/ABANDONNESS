@@ -52,12 +52,14 @@ const LoginPage = (props) => {
               placeholder="아이디를 입력해주세요"
               value={UsersId}
               onChange={onUsersIdHandler}
+              required
             />
             <input
               type="password"
               placeholder="비밀번호를 입력해주세요"
               value={Password}
               onChange={onPasswordHandler}
+              required
             />
             <button type="submit">로그인</button>
           </form>

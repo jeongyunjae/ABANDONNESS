@@ -68,10 +68,10 @@ nav .menu {
 }
 
 .menu > li {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 700;
   list-style: none;
-  letter-spacing: 1.6px;
+  letter-spacing: 1px;
 }
 
 span {

@@ -75,12 +75,12 @@ function RegisterPage(props) {
             onSubmit={onSubmitHandler}
           >
             <label>아이디</label>
-
             <input
               type="id"
               placeholder="아이디를 입력해주세요"
               value={UsersId}
               onChange={onUsersIdHandler}
+              required
             />
             <label>비밀번호</label>
             <input
@@ -88,6 +88,7 @@ function RegisterPage(props) {
               placeholder="비밀번호를 입력해주세요"
               value={Password}
               onChange={onPasswordHandler}
+              required
             />
             <label>비밀번호 확인</label>
             <input
@@ -95,6 +96,7 @@ function RegisterPage(props) {
               placeholder="비밀번호를 한번 더 확인해주세요"
               value={CheckPassword}
               onChange={onCheckPasswordHandler}
+              required
             />
             <label>이름</label>
             <input
@@ -102,6 +104,7 @@ function RegisterPage(props) {
               placeholder="이름을 입력해주세요"
               value={Name}
               onChange={onNameHandler}
+              required
             />
             <label>연주하는 악기</label>
             <input
@@ -109,6 +112,7 @@ function RegisterPage(props) {
               placeholder="한글로 작성해주세요"
               value={InstName}
               onChange={onInstNameHandler}
+              required
             />
             <label>단원확인</label>
             <input
@@ -116,6 +120,7 @@ function RegisterPage(props) {
               placeholder="동방 비밀번호"
               value={CirclesPassword}
               onChange={onCirclesPasswordHandler}
+              required
             />
             <button type="submit">가입하기</button>
           </form>

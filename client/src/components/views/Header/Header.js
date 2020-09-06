@@ -68,19 +68,19 @@ const Header = (props) => {
           <nav>
             <ul className="menu">
               <li>
-                <Link to="/about">ABOUT US</Link>
+                <Link to="/about">소개</Link>
               </li>
               <li>
-                <Link to="/apply">APPLY</Link>
+                <Link to="/apply">지원하기</Link>
               </li>
               <li>
-                <Link to="#">GALLARY</Link>
+                <Link to="#">갤러리</Link>
               </li>
               <li>
-                <Link to="#">NOTICE</Link>
+                <Link to="#">공지사항</Link>
               </li>
               <li>
-                <Link to="#">COMMUNITY</Link>
+                <Link to="#">커뮤니티</Link>
               </li>
             </ul>
           </nav>
