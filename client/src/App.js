@@ -27,7 +27,7 @@ function App() {
           <Route
             exact
             path="/gallary/upload"
-            component={Auth(UploadGallaryPage, null)}
+            component={Auth(UploadGallaryPage, true, true)}
           />
         </Switch>
       </div>

@@ -20,4 +20,24 @@
   width: 300px;
   height: 200px;
   margin: auto;
+  text-align: center;
+}
+
+.hello > li {
+  color: black;
+  list-style: none;
+}
+
+.hello li a:link {
+  color: black;
+  text-decoration: none;
+}
+
+.hello li a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+.hello li a:hover {
+  color: #202020;
 }

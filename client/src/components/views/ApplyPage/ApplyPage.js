@@ -31,7 +31,7 @@ const ApplyPage = (props) => {
 
     emailjs
       .sendForm(
-        "service_k53u2rg",
+        "service_yo0hk9c",
         "template_oigcbp8",
         event.target,
         "user_sYL5UWiM0ru0YERDH5pff"
@@ -55,11 +55,15 @@ const ApplyPage = (props) => {
         <div className="apply-form">
           <div className="tit-apply">지원하기</div>
           <form
-            style={{ display: "flex", flexDirection: "column" }}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+            }}
             onSubmit={sendEmail}
           >
             <div className="pure-group">
-              <label>학과, 학번, 이름</label>
+              <label className="apply-label">학과, 학번, 이름</label>
+              <br />
               <input
                 type="text"
                 name="name"
@@ -70,7 +74,8 @@ const ApplyPage = (props) => {
               />
             </div>
             <div className="pure-group">
-              <label>연락가능한 번호</label>
+              <label className="apply-label">연락가능한 번호</label>
+              <br />
               <input
                 type="text"
                 name="phoneNum"
@@ -82,7 +87,8 @@ const ApplyPage = (props) => {
             </div>
 
             <div className="pure-group">
-              <label>지원하는 악기 </label>
+              <label className="apply-label">지원하는 악기 </label>
+              <br />
               <input
                 type="text"
                 name="inst"
@@ -94,7 +100,8 @@ const ApplyPage = (props) => {
             </div>
 
             <div className="pure-group">
-              <label>악기 다룬 기간과 활동 경력</label>
+              <label className="apply-label">악기 다룬 기간과 활동 경력</label>
+              <br />
               <input
                 type="text"
                 name="term"
@@ -106,7 +113,10 @@ const ApplyPage = (props) => {
             </div>
 
             <div className="pure-group">
-              <label>하고 싶은 말을 자유롭게 적어주세요:)</label>
+              <label className="apply-label">
+                하고 싶은 말을 자유롭게 적어주세요:)
+              </label>
+              <br />
               <input
                 type="text"
                 name="message"

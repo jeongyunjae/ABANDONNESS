@@ -1,0 +1,35 @@
+.upload-content {
+  width: 100%;
+  height: 1500px;
+  background-color: #e2e2e2;
+  display: flex;
+}
+
+.upload-container {
+  width: 60%;
+  margin: 180px auto;
+  height: inherit;
+  flex-direction: column;
+}
+
+h2 {
+  padding: 10px;
+  margin-bottom: 50px;
+  font-weight: 900;
+  text-align: center;
+  color: #333;
+}
+
+.upload-container Form input[type="text"] {
+  margin-left: 5px;
+  width: 30%;
+  height: 30px;
+}
+
+.upload-container Form .input-title {
+  margin-bottom: 40px;
+}
+
+Form TextArea {
+  margin-left: 0px;
+}
