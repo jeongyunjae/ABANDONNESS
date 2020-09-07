@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-
+import { useDispatch } from "react-redux";
 import { UploadOutlined } from "@ant-design/icons";
 import Dropzone from "react-dropzone";
 import Axios from "axios";
+import { uploadImages } from "../../actions/upload_actions";
 
-function FileUpload() {
+function FileUpload(props) {
+  const dispatch = useDispatch();
   const [Images, setImages] = useState([]);
   const dropHandler = (files) => {
     let formData = new FormData(); //파일 전송할때 같이 전송해줘야하는것(파일정보)
@@ -13,16 +15,23 @@ function FileUpload() {
       header: { "content-type": "multipart/form-data" },
     };
     formData.append("file", files[0]);
-    Axios.post("/api/gallary/image", formData, config).then((response) => {
-      if (response.data.success) {
-        console.log(response.data);
-        setImages([...Images, response.data.filePath]);
+    dispatch(uploadImages(formData, config)).then((response) => {
+      if (response.payload.success) {
+        setImages([...Images, response.payload.filePath]);
+        props.refreshFunction([...Images, response.payload.filePath]);
       } else {
-        console.log(response.data);
+        console.log(response.payload);
       }
     });
   };
-  console.log(process.env.NODE_ENV);
+
+  const deleteImageHandler = (image) => {
+    let targetImgIndex = Images.indexOf(image);
+    let deletedImg = [...Images];
+    deletedImg.splice(targetImgIndex, 1);
+    console.log(deletedImg);
+    setImages(deletedImg);
+  };
 
   return (
     <div style={{ display: "flex", justifyContent: "space-between" }}>
@@ -56,7 +65,7 @@ function FileUpload() {
         }}
       >
         {Images.map((image, index) => (
-          <div key={index}>
+          <div onClick={() => deleteImageHandler()} key={index}>
             <img
               style={{ minWidth: "300px", width: "300px", height: "240px" }}
               src={

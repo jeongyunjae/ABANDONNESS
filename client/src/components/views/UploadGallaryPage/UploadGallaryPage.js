@@ -25,6 +25,10 @@ function UploadGallaryPage() {
   const discriptionChangeHandler = (event) => {
     setDiscription(event.currentTarget.value);
   };
+
+  const updateImages = (newImages) => {
+    setImage(newImages);
+  };
   return (
     <div className="wrapper">
       <Header />
@@ -33,8 +37,8 @@ function UploadGallaryPage() {
           <h2 style={{ textAlign: "center" }} level={2}>
             업로드
           </h2>
-          <FileUpload />
           <Form>
+            <FileUpload refreshFunction={updateImages} />
             <div className="input-title">
               <label>제목</label>
               <input
