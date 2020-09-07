@@ -19,7 +19,7 @@
 .noListStyle {
   position: absolute;
   display: flex;
-  margin-right: 20px;
+  margin-right: 15px;
   right: 0;
   top: 28px;
 }
@@ -62,7 +62,7 @@ img {
 }
 
 nav .menu {
-  margin: 0 100px;
+  margin: 0 120px;
   display: flex;
   justify-content: space-between;
 }
@@ -87,7 +87,7 @@ span {
   }
 
   nav .menu {
-    margin: 0 70px;
+    margin: 0 90px;
   }
 
   .menu > li {
@@ -128,7 +128,7 @@ span {
 
   nav .menu {
     width: auto;
-    margin: 0 50px;
+    margin: 0 65px;
   }
 
   .menu > li {
@@ -148,7 +148,7 @@ span {
   }
 
   nav .menu {
-    margin: 6px 15px;
+    margin: 6px 38px;
   }
   .header .container {
     height: 70px;
@@ -165,11 +165,10 @@ span {
   }
 
   .noListStyle {
-    margin-left: 8px;
     position: absolute;
     display: flex;
     right: 0;
-    top: 28px;
+    top: 30px;
   }
 
   .noListStyle > li {

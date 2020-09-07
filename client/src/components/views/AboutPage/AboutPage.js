@@ -1,9 +1,5 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { withRouter } from "react-router-dom";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import React from "react";
 
-import { loginUser } from "../../../actions/user_actions";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import "./AboutPage.css";

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import { withRouter } from "react-router";
-import { connect } from "react-redux";
 import Axios from "axios";
 
 import logo from "../../../img/logo.png";
@@ -20,7 +19,7 @@ const Header = (props) => {
       setLoginStatus(response.payload.isAuth);
       setUserName(response.payload.name);
     });
-  }, []);
+  }, [dispatch]);
 
   const onClickHandler = () => {
     Axios.get("/api/users/logout").then((response) => {
@@ -89,9 +88,5 @@ const Header = (props) => {
     </div>
   );
 };
-
-const mapStateToProps = (state) => ({
-  userData: state.User.userData,
-});
 
 export default withRouter(Header);

@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { UploadOutlined } from "@ant-design/icons";
 import Dropzone from "react-dropzone";
-import Axios from "axios";
 import { uploadImages } from "../../actions/upload_actions";
+
+import "./FileUpload.css";
 
 function FileUpload(props) {
   const dispatch = useDispatch();
@@ -29,18 +30,17 @@ function FileUpload(props) {
     let targetImgIndex = Images.indexOf(image);
     let deletedImg = [...Images];
     deletedImg.splice(targetImgIndex, 1);
-    console.log(deletedImg);
     setImages(deletedImg);
+    props.refreshFunction(deletedImg);
   };
 
   return (
-    <div style={{ display: "flex", justifyContent: "space-between" }}>
+    <div style={{ margin: "15px 0", justifyContent: "space-between" }}>
       <Dropzone onDrop={dropHandler}>
         {({ getRootProps, getInputProps }) => (
           <div
+            className="uploading"
             style={{
-              width: 300,
-              height: 240,
               margin: "0 auto",
               border: "1px solid gray",
               display: "flex",
@@ -50,7 +50,7 @@ function FileUpload(props) {
           >
             <div {...getRootProps()}>
               <input {...getInputProps()} />
-              <UploadOutlined type="plus" style={{ fontSize: "3rem" }} />
+              <UploadOutlined type="plus" style={{ fontSize: "1rem" }} />
             </div>
           </div>
         )}
@@ -58,16 +58,16 @@ function FileUpload(props) {
 
       <div
         style={{
-          display: "flex",
-          width: "350px",
-          height: "240px",
-          overflowX: "auto",
+          float: "left",
+          margin: "25px 0px",
+          height: "250px",
+          overflowY: "auto",
         }}
       >
         {Images.map((image, index) => (
           <div onClick={() => deleteImageHandler()} key={index}>
             <img
-              style={{ minWidth: "300px", width: "300px", height: "240px" }}
+              style={{ width: "100%", height: "240px" }}
               src={
                 process.env.NODE_ENV === "development"
                   ? `http://localhost:5000/${image}`

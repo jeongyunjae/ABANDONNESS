@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import Axios from "axios";
+import React from "react";
 import { withRouter } from "react-router-dom";
 
 import ReactPlayer from "react-player";

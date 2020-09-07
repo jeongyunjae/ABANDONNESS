@@ -6,7 +6,7 @@
 }
 
 .upload-container {
-  width: 60%;
+  width: 100%;
   margin: 180px auto;
   height: inherit;
   flex-direction: column;
@@ -14,22 +14,75 @@
 
 h2 {
   padding: 10px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   font-weight: 900;
   text-align: center;
   color: #333;
 }
 
-.upload-container Form input[type="text"] {
-  margin-left: 5px;
-  width: 30%;
-  height: 30px;
+.upload-container Form {
+  width: 100%;
+  margin: 0 auto;
 }
 
 .upload-container Form .input-title {
-  margin-bottom: 40px;
+  margin: 10px auto;
+  width: 100%;
+  text-align: center;
 }
 
-Form TextArea {
-  margin-left: 0px;
+.upload-container Form input[type="text"] {
+  letter-spacing: 1px;
+  width: 70%;
+  height: 28px;
+  padding: 5px 7px;
+}
+
+.upload-container Form .input-textarea {
+  text-align: center;
+  width: 100%;
+  height: 250px;
+}
+
+.upload-container Form TextArea {
+  width: 70%;
+  padding: 5px 7px;
+  letter-spacing: 1px;
+}
+
+.upload-container Form .wrapper-button {
+  text-align: center;
+  width: 100%;
+}
+
+.upload-container Form button {
+  width: 20%;
+  margin: 0 auto;
+  height: 40px;
+  margin-top: 30px;
+  font-size: 13px;
+  border: 1px solid #202020;
+  background-color: #202020;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .upload-container {
+    width: 100%;
+    margin: 180px auto;
+    height: inherit;
+    flex-direction: column;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  .upload-container Form input[type="text"] {
+    width: 80%;
+  }
+
+  .upload-container Form TextArea {
+    width: 80%;
+  }
 }

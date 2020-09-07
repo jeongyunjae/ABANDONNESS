@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
-import { useDispatch } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";

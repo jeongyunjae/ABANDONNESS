@@ -1,0 +1,12 @@
+.uploading {
+  width: 6%;
+  height: 38px;
+  margin-bottom: 1000px;
+}
+
+@media (max-width: 768px) {
+  .uploading {
+    width: 18%;
+    height: 30px;
+  }
+}

@@ -1,23 +1,19 @@
 import React, { useState } from "react";
-import { Typography, Button, Form, Input } from "antd";
+import { Button, Form, Input } from "antd";
 import { useDispatch } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import FileUpload from "../../utils/FileUpload";
-
 import "./UploadGallaryPage.css";
-
-const { Title } = Typography;
+import { uploadGallary } from "../../../actions/upload_actions";
 const { TextArea } = Input;
 
-function UploadGallaryPage() {
+function UploadGallaryPage(props) {
+  const dispatch = useDispatch();
   const [Title, setTitle] = useState("");
   const [Discription, setDiscription] = useState("");
-  const [Image, setImage] = useState([]);
-
+  const [Images, setImages] = useState([]);
   const titleChangeHandler = (event) => {
     setTitle(event.currentTarget.value);
   };
@@ -27,7 +23,27 @@ function UploadGallaryPage() {
   };
 
   const updateImages = (newImages) => {
-    setImage(newImages);
+    setImages(newImages);
+  };
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+
+    const body = {
+      writer: props.user.userData.name,
+      title: Title,
+      discription: Discription,
+      images: Images,
+    };
+
+    dispatch(uploadGallary(body)).then((response) => {
+      if (response.payload.success) {
+        alert("게시물을 저장했습니다");
+        props.history.push("/gallary");
+      } else {
+        alert("게시물 저장에 실패했습니다.");
+      }
+    });
   };
   return (
     <div className="wrapper">
@@ -37,27 +53,32 @@ function UploadGallaryPage() {
           <h2 style={{ textAlign: "center" }} level={2}>
             업로드
           </h2>
-          <Form>
+          <form onSubmit={submitHandler}>
             <FileUpload refreshFunction={updateImages} />
-            <div className="input-title">
-              <label>제목</label>
-              <input
-                type="text"
-                onChange={titleChangeHandler}
-                value={Title}
-              ></input>
+            <div style={{ clear: "none" }}>
+              <div className="input-title">
+                <input
+                  type="text"
+                  onChange={titleChangeHandler}
+                  placeholder="제목"
+                  value={Title}
+                  required
+                ></input>
+              </div>
+              <div className="input-textarea">
+                <TextArea
+                  style={{ height: "250px" }}
+                  value={Discription}
+                  onChange={discriptionChangeHandler}
+                  placeholder="내용"
+                  required
+                />
+              </div>
+              <div className="wrapper-button">
+                <button type="submit">확인</button>
+              </div>
             </div>
-
-            <label>내용</label>
-            <div className="input-textarea">
-              <TextArea
-                style={{ width: "70%", height: "200px" }}
-                value={Discription}
-                onChange={discriptionChangeHandler}
-              />
-            </div>
-            <Button>확인</Button>
-          </Form>
+          </form>
         </div>
       </div>
       <Footer />

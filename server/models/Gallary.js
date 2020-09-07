@@ -4,14 +4,14 @@ const Schema = mongoose.Schema;
 const GallarySchema = mongoose.Schema(
   {
     writer: {
-      type: Schema.Types.ObjectId,
+      type: String,
       ref: "User",
     },
     title: {
       type: String,
       maxlength: 50,
     },
-    description: {
+    discription: {
       type: String,
     },
 
@@ -26,19 +26,6 @@ const GallarySchema = mongoose.Schema(
     },
   },
   { timestamps: true }
-);
-
-GallarySchema.index(
-  {
-    title: "text",
-    description: "text",
-  },
-  {
-    weights: {
-      title: 5,
-      description: 1,
-    },
-  }
 );
 
 const Gallary = mongoose.model("Gallary", GallarySchema);
