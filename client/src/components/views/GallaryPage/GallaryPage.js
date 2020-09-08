@@ -30,7 +30,16 @@ function GallaryPage() {
     return (
       <Card
         key={index}
-        cover={<img src={`http://localhost:5000/${gallary.images[0]}`} />}
+        cover={
+          <img
+            style={{ width: "100%", height: "240px" }}
+            src={
+              process.env.NODE_ENV === "development"
+                ? `http://localhost:5000/${gallary.images[0]}`
+                : `https://abandonness.herokuapp.com/${gallary.images[0]}`
+            }
+          />
+        }
       >
         <Meta />
       </Card>
