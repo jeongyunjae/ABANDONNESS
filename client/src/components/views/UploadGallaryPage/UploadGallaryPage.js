@@ -30,6 +30,7 @@ function UploadGallaryPage(props) {
     event.preventDefault();
 
     const body = {
+      personId: props.user.userData._id,
       writer: props.user.userData.name,
       title: Title,
       discription: Discription,

@@ -1,43 +1,64 @@
 .gallary-content {
   width: 100%;
   height: 1500px;
-  background-color: #e2e2e2;
   display: flex;
 }
 
 .gallary-container {
-  width: 50%;
+  width: 75%;
   margin: 0 auto;
   height: inherit;
 }
 
-.hello {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 300px;
+.upload-link {
+  width: 100%;
   height: 200px;
-  margin: auto;
+  display: table;
+}
+
+.link-container {
+  font-size: 20px;
+  font-weight: 500;
+  list-style: none;
+  color: #ffffff;
+  letter-spacing: 0.4px;
+  align-items: center;
+  vertical-align: middle;
+  display: table-cell;
   text-align: center;
 }
 
-.hello > li {
-  color: black;
-  list-style: none;
+.render-card {
+  width: 100%;
+  height: 1200px;
+  border: 1px solid #202020;
 }
 
-.hello li a:link {
+.render-card .ant-card {
+  width: 100%;
+  height: 400px;
+  border: 1px solid #202020;
+}
+
+.render-card .ant-card .ant-card-cover {
+  width: 100%;
+  height: 400px;
+  border: 1px solid #202020;
+}
+
+.upload-link a:link {
+  top: 40px;
   color: black;
   text-decoration: none;
 }
 
-.hello li a:visited {
+.upload-link a:visited {
+  top: 40px;
   color: black;
   text-decoration: none;
 }
 
-.hello li a:hover {
+.upload-link a:hover {
+  padding: 40px;
   color: #202020;
 }
