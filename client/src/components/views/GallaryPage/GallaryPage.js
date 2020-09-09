@@ -34,7 +34,6 @@ function GallaryPage() {
   const getData = (body) => {
     Axios.post("/api/gallary/gallaries", body).then((response) => {
       if (response.data.success) {
-        console.log(...response.data.gallaryInfo);
         if (body.loadMore) {
           setGallaries([
             ...Gallaries,
