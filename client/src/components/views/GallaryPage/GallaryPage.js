@@ -17,22 +17,48 @@ function GallaryPage() {
   const [Gallaries, setGallaries] = useState([]);
   const [SearchTerm, setSearchTerm] = useState("");
   const [Skip, setSkip] = useState(0);
-  const [Limit, setLimit] = useState(3);
+  const [Limit, setLimit] = useState(4);
+  const [PostSize, setPostSize] = useState(0);
+  const [WholeDataSize, setWholeDataSize] = useState(0);
   useEffect(() => {
-    let body = {
-      skip: Skip,
-      limit: Limit,
-    };
-    Axios.post("/api/gallary/gallaries", body).then((response) => {
+    Axios.post("/api/gallary/gallaries").then((response) => {
       if (response.data.success) {
-        setGallaries(response.data.gallaryInfo);
+        setWholeDataSize(Object.keys(response.data.gallaryInfo).length);
+        setGallaries(response.data.gallaryInfo.slice(0, Limit));
       } else {
-        alert("데이터를 가져오는데 실패하였습니다");
+        alert("데이터를 불러오지 못하였습니다.");
       }
     });
   }, []);
 
-  const loadMoreHandler = () => {};
+  const getData = (body) => {
+    Axios.post("/api/gallary/gallaries", body).then((response) => {
+      if (response.data.success) {
+        console.log(...response.data.gallaryInfo);
+        if (body.loadMore) {
+          setGallaries([
+            ...Gallaries,
+            ...response.data.gallaryInfo.slice(0, Limit),
+          ]);
+          setPostSize(response.data.postSize);
+        } else {
+          setGallaries(response.data.gallaryInfo.slice(0, Limit));
+        }
+      } else {
+        alert("데이터를 불러오지 못하였습니다.");
+      }
+    });
+  };
+
+  const loadMoreHandler = () => {
+    let skip = Skip + Limit;
+    let body = {
+      skip: skip,
+      loadMore: true, //더보기 버튼을 눌렀을때 가는 request라는 정보
+    };
+    setSkip(skip);
+    getData(body);
+  };
 
   const renderCards = Gallaries.map((gallary, index) => {
     return (
@@ -86,9 +112,17 @@ function GallaryPage() {
           <div className="render-card">
             <div className="cards-wrapper">{renderCards}</div>
           </div>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <button onClick={loadMoreHandler}>더보기</button>
-          </div>
+          {WholeDataSize - 4 > Skip && (
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                height: "50px",
+              }}
+            >
+              <button onClick={loadMoreHandler}>더보기</button>
+            </div>
+          )}
         </div>
       </div>
       <Footer />

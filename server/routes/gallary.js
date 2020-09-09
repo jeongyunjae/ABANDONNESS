@@ -39,10 +39,11 @@ router.post("/", (req, res) => {
 });
 
 router.post("/gallaries", (req, res) => {
+  console.log(req.body);
   let limit = req.body.limit ? parseInt(req.body.limit) : 100;
   let skip = req.body.skip ? parseInt(req.body.skip) : 0;
   // gallary collection에 들어있는 모든 상품정보 받아오기
-  Gallary.find()
+  Gallary.find({})
     .populate("personId")
     .skip(skip) //0번째부터 가져와!
     .limit(limit) //8개만 가져와!
