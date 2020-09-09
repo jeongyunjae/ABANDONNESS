@@ -11,7 +11,6 @@ function FileUpload(props) {
   const [Images, setImages] = useState([]);
   const dropHandler = (files) => {
     let formData = new FormData(); //파일 전송할때 같이 전송해줘야하는것(파일정보)
-
     const config = {
       header: { "content-type": "multipart/form-data" },
     };
@@ -34,9 +33,11 @@ function FileUpload(props) {
     props.refreshFunction(deletedImg);
   };
 
+  console.log(Images);
+
   return (
     <div style={{ margin: "15px 0", justifyContent: "space-between" }}>
-      <Dropzone onDrop={dropHandler}>
+      <Dropzone onDrop={dropHandler} minSize={0} multiple={true}>
         {({ getRootProps, getInputProps }) => (
           <div
             className="uploading"

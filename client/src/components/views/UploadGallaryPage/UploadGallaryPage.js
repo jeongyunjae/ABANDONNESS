@@ -28,9 +28,21 @@ function UploadGallaryPage(props) {
 
   const submitHandler = (event) => {
     event.preventDefault();
+    let date = new Date();
+    let year = date.getFullYear();
+    let month = new String(date.getMonth() + 1);
+    let day = new String(date.getDate());
+    if (month.length == 1) {
+      month = "0" + month;
+    }
+    if (day.length == 1) {
+      day = "0" + day;
+    }
+    let today = year + "-" + month + "-" + day;
 
     const body = {
       personId: props.user.userData._id,
+      date: today,
       writer: props.user.userData.name,
       title: Title,
       discription: Discription,
