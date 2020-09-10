@@ -33,8 +33,6 @@ function FileUpload(props) {
     props.refreshFunction(deletedImg);
   };
 
-  console.log(Images);
-
   return (
     <div style={{ margin: "15px 0", justifyContent: "space-between" }}>
       <Dropzone onDrop={dropHandler} minSize={0} multiple={true}>

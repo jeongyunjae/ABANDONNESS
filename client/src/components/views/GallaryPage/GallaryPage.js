@@ -124,7 +124,6 @@ function GallaryPage() {
           )}
         </div>
       </div>
-      <Footer />
     </div>
   );
 }
