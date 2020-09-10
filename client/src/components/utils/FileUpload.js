@@ -55,16 +55,11 @@ function FileUpload(props) {
         )}
       </Dropzone>
 
-      <div
-        style={{
-          margin: "25px auto",
-          overflowY: "auto",
-        }}
-      >
+      <div className="status-images">
         {Images.map((image, index) => (
           <div onClick={() => deleteImageHandler()} key={index}>
             <img
-              style={{ width: "100%", height: "200px", margin: "0 auto" }}
+              style={{ width: "100%", height: "200px" }}
               src={
                 process.env.NODE_ENV === "development"
                   ? `http://localhost:5000/${image}`

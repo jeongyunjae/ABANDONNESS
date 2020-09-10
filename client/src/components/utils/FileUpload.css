@@ -4,9 +4,36 @@
   margin-bottom: 100px;
 }
 
+.status-images {
+  width: 30%;
+  margin: 25px auto;
+  height: 250px;
+  overflow-y: auto;
+}
+
+@media (max-width: 1024px) {
+  .uploading {
+    width: 18%;
+    height: 30px;
+  }
+  .status-images {
+    width: 50%;
+  }
+}
+
 @media (max-width: 768px) {
   .uploading {
     width: 18%;
     height: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .uploading {
+    width: 18%;
+    height: 30px;
+  }
+  .status-images {
+    width: 60%;
   }
 }
