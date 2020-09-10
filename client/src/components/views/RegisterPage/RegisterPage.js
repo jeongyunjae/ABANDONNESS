@@ -13,7 +13,7 @@ function RegisterPage(props) {
   const [CheckPassword, setCheckPassword] = useState("");
   const [Name, setName] = useState("");
   const [InstName, setInstName] = useState("");
-  const [CirclesPassword, setCirclesPassword] = useState("");
+  //const [CirclesPassword, setCirclesPassword] = useState("");
 
   const onUsersIdHandler = (event) => {
     setUsersId(event.currentTarget.value);
@@ -35,16 +35,15 @@ function RegisterPage(props) {
     setInstName(event.currentTarget.value);
   };
 
-  const onCirclesPasswordHandler = (event) => {
+  /*const onCirclesPasswordHandler = (event) => {
     setCirclesPassword(event.currentTarget.value);
-  };
+  }; */
 
   let body = {
     usersId: UsersId,
     password: Password,
     name: Name,
-    instName: InstName,
-    circlesPassword: CirclesPassword,
+    instName: InstName, //circlesPassword: CirclesPassword,
   };
 
   const onSubmitHandler = (event) => {
@@ -114,14 +113,14 @@ function RegisterPage(props) {
               onChange={onInstNameHandler}
               required
             />
-            <label>단원확인</label>
+            {/*<label>단원확인</label>
             <input
               type="password"
               placeholder="동방 비밀번호"
               value={CirclesPassword}
               onChange={onCirclesPasswordHandler}
               required
-            />
+            />*/}
             <button type="submit">가입하기</button>
           </form>
         </div>
