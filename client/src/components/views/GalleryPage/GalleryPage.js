@@ -11,20 +11,20 @@ import SearchFeature from "./Sections/SearchFeature";
 
 import { PlusCircleOutlined } from "@ant-design/icons";
 
-import "./GallaryPage.css";
+import "./GalleryPage.css";
 
-function GallaryPage() {
-  const [Gallaries, setGallaries] = useState([]);
+function GalleryPage() {
+  const [Galleries, setGalleries] = useState([]);
   const [SearchTerm, setSearchTerm] = useState("");
   const [Skip, setSkip] = useState(0);
-  const [Limit, setLimit] = useState(4);
+  const [Limit, setLimit] = useState(3);
   const [PostSize, setPostSize] = useState(0);
   const [WholeDataSize, setWholeDataSize] = useState(0);
   useEffect(() => {
-    Axios.post("/api/gallary/gallaries").then((response) => {
+    Axios.post("/api/gallery/galleries").then((response) => {
       if (response.data.success) {
-        setWholeDataSize(Object.keys(response.data.gallaryInfo).length);
-        setGallaries(response.data.gallaryInfo.slice(0, Limit));
+        setWholeDataSize(Object.keys(response.data.galleryInfo).length);
+        setGalleries(response.data.galleryInfo.slice(0, Limit));
       } else {
         alert("데이터를 불러오지 못하였습니다.");
       }
@@ -32,16 +32,16 @@ function GallaryPage() {
   }, []);
 
   const getData = (body) => {
-    Axios.post("/api/gallary/gallaries", body).then((response) => {
+    Axios.post("/api/gallery/galleries", body).then((response) => {
       if (response.data.success) {
         if (body.loadMore) {
-          setGallaries([
-            ...Gallaries,
-            ...response.data.gallaryInfo.slice(0, Limit),
+          setGalleries([
+            ...Galleries,
+            ...response.data.galleryInfo.slice(0, Limit),
           ]);
           setPostSize(response.data.postSize);
         } else {
-          setGallaries(response.data.gallaryInfo.slice(0, Limit));
+          setGalleries(response.data.galleryInfo.slice(0, Limit));
         }
       } else {
         alert("데이터를 불러오지 못하였습니다.");
@@ -59,37 +59,45 @@ function GallaryPage() {
     getData(body);
   };
 
-  const renderCards = Gallaries.map((gallary, index) => {
+  const renderCards = Galleries.map((gallery, index) => {
     return (
       <div className="img-wrapper">
-        <img
-          style={{ width: "100%", height: "200px", objectFit: "cover" }}
-          key={index}
-          src={
-            process.env.NODE_ENV === "development"
-              ? `http://localhost:5000/${gallary.images[0]}`
-              : `https://abandonness.herokuapp.com/${gallary.images[0]}`
-          }
-        />
-        <div className="gallary-date">{gallary.date}</div>
-        <div className="Gallary-title">{gallary.title}</div>
+        <a href={`/gallery/${gallery._id}`}>
+          <img
+            style={{ width: "100%", height: "200px", objectFit: "cover" }}
+            key={index}
+            src={
+              process.env.NODE_ENV === "development"
+                ? `http://localhost:5000/${gallery.images[0]}`
+                : `https://abandonness.herokuapp.com/${gallery.images[0]}`
+            }
+          />
+        </a>
+        <div className="gallery-date">{gallery.date}</div>
+        <div className="Gallery-title">{gallery.title}</div>
       </div>
     );
   });
 
   const updateSearchTerm = (updateData) => {
+    let body = {
+      skip: 0,
+      SearchTerm: updateData,
+    };
+    setSkip(0);
     setSearchTerm(updateData);
+    getData(body);
   };
 
   return (
     <div className="wrapper">
       <Header />
-      <div className="gallary-content">
-        <div className="gallary-container">
-          <div className="tit-gallary">갤러리</div>
+      <div className="gallery-content">
+        <div className="gallery-container">
+          <div className="tit-gallery">갤러리</div>
           <div className="upload-link">
             <div className="link-container">
-              <Link to="/gallary/upload">
+              <Link to="/gallery/upload">
                 {
                   <PlusCircleOutlined
                     type="plus"
@@ -111,7 +119,7 @@ function GallaryPage() {
           <div className="render-card">
             <div className="cards-wrapper">{renderCards}</div>
           </div>
-          {WholeDataSize - 4 > Skip && (
+          {WholeDataSize - 3 > Skip && (
             <div
               style={{
                 display: "flex",
@@ -128,4 +136,4 @@ function GallaryPage() {
   );
 }
 
-export default withRouter(GallaryPage);
+export default withRouter(GalleryPage);

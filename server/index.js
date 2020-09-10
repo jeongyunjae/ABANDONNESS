@@ -23,7 +23,7 @@ mongoose
   .catch((err) => console.log(err));
 
 app.use("/api/users", require("./routes/users"));
-app.use("/api/gallary", require("./routes/gallary"));
+app.use("/api/gallery", require("./routes/gallery"));
 app.use("/uploads", express.static("uploads"));
 
 // Serve static assets if in production

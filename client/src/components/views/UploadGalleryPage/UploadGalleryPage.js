@@ -5,11 +5,11 @@ import { withRouter } from "react-router-dom";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import FileUpload from "../../utils/FileUpload";
-import "./UploadGallaryPage.css";
-import { uploadGallary } from "../../../actions/upload_actions";
+import "./UploadGalleryPage.css";
+import { uploadGallery } from "../../../actions/upload_actions";
 const { TextArea } = Input;
 
-function UploadGallaryPage(props) {
+function UploadGalleryPage(props) {
   const dispatch = useDispatch();
   const [Title, setTitle] = useState("");
   const [Discription, setDiscription] = useState("");
@@ -49,10 +49,10 @@ function UploadGallaryPage(props) {
       images: Images,
     };
 
-    dispatch(uploadGallary(body)).then((response) => {
+    dispatch(uploadGallery(body)).then((response) => {
       if (response.payload.success) {
         alert("게시물을 저장했습니다");
-        props.history.push("/gallary");
+        props.history.push("/gallery");
       } else {
         alert("게시물 저장에 실패했습니다.");
       }
@@ -99,4 +99,4 @@ function UploadGallaryPage(props) {
   );
 }
 
-export default withRouter(UploadGallaryPage);
+export default withRouter(UploadGalleryPage);

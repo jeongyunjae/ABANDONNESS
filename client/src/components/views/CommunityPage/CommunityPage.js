@@ -1,8 +1,7 @@
 import React from "react";
 
 import Header from "../Header/Header";
-
-function NoticePage() {
+function CommunityPage() {
   return (
     <div>
       <Header />
@@ -10,4 +9,4 @@ function NoticePage() {
   );
 }
 
-export default NoticePage;
+export default CommunityPage;
