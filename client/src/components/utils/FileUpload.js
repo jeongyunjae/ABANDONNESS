@@ -7,6 +7,7 @@ import { uploadImages } from "../../actions/upload_actions";
 import "./FileUpload.css";
 
 function FileUpload(props) {
+  console.log("hello");
   const dispatch = useDispatch();
   const [Images, setImages] = useState([]);
   const dropHandler = (files) => {
