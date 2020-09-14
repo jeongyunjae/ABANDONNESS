@@ -7,11 +7,12 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
 const config = require("./config/key");
+const aws = require("aws-sdk");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json()); // json을 parse하도록 함
 app.use(cookieParser());
-
+aws.config.region = "us-east-1";
 mongoose
   .connect(config.mongoURI, {
     useNewUrlParser: true,

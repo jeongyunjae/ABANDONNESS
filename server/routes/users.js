@@ -27,12 +27,12 @@ router.post("/register", (req, res) => {
         signUpSuccess: false,
         message: "이미 가입된 아이디입니다.",
       });
-    } /*else if (user.circlesPassword !== 104105) {
+    } else if (user.circlesPassword !== 104105) {
       return res.status(200).json({
         signUpSuccess: false,
         message: "동아리방 비밀번호가 틀렸습니다",
-      })
-    } */ else {
+      });
+    } else {
       user.save((err, userInfo) => {
         if (err) return res.status(400).json({ success: false, err });
         return res.status(200).json({
