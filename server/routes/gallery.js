@@ -3,7 +3,7 @@ const router = express.Router();
 const multer = require("multer");
 const { Gallery } = require("../models/Gallery");
 
-var storage = multer.diskStorage({
+let storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, "uploads/");
   },
@@ -12,7 +12,7 @@ var storage = multer.diskStorage({
   },
 });
 
-var upload = multer({ storage: storage }).single("file");
+let upload = multer({ storage: storage }).single("file");
 
 router.post("/image", (req, res) => {
   //가져온 이미지를 저장을 해주면 된다.
