@@ -25,7 +25,6 @@ const Header = (props) => {
     Axios.get("/api/users/logout").then((response) => {
       if (response.data.success) {
         setLoginStatus(response.data.isAuth);
-        console.log(loginStatus);
         props.history.push("/");
       }
     });
