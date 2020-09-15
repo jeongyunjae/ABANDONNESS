@@ -45,8 +45,7 @@ router.post("/galleries", (req, res) => {
   // gallery collection에 들어있는 모든 상품정보 받아오기
 
   if (term) {
-    Gallery.find({})
-      .find({ $text: { $search: term } }) //term이 있는 거만 찾아서 데이터 전달
+    Gallery.find({ $text: { $search: term } }) //term이 있는 거만 찾아서 데이터 전달
       .skip(skip) //0번째부터 가져와!
       .limit(limit) //8개만 가져와!
       .exec((err, galleryInfo) => {

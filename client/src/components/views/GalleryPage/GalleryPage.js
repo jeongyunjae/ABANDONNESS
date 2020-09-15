@@ -107,13 +107,7 @@ function GalleryPage() {
               </Link>
             </div>
           </div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "flex-end",
-              margin: "1rem",
-            }}
-          >
+          <div className="search-container">
             <SearchFeature refreshFunction={updateSearchTerm} />
           </div>
           <div className="render-card">

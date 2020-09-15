@@ -69,6 +69,12 @@
   box-shadow: -8px 10px 20px rgba(0, 0, 0, 0.3);
 }
 
+.search-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem;
+}
+
 .img-wrapper::before {
   content: "";
   bottom: 10px;
@@ -167,7 +173,13 @@
   }
 
   .gallery-content button {
-    width: 12%;
+    width: 16%;
     height: 30px;
+  }
+
+  .search-container {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
   }
 }
