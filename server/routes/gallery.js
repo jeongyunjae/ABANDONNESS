@@ -47,7 +47,7 @@ router.post("/galleries", (req, res) => {
   if (term) {
     Gallery.find({ $text: { $search: term } }) //term이 있는 거만 찾아서 데이터 전달
       .skip(skip) //0번째부터 가져와!
-      .limit(limit) //8개만 가져와!
+      .limit(limit) //3개만 가져와!
       .exec((err, galleryInfo) => {
         if (err) return res.status(400).json({ success: false, err });
         return res.status(200).json({ success: true, galleryInfo });

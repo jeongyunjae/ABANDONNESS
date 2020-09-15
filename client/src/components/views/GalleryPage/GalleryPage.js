@@ -61,7 +61,7 @@ function GalleryPage() {
 
   const renderCards = Galleries.map((gallery, index) => {
     return (
-      <div className="img-wrapper">
+      <div key={index} className="img-wrapper">
         <a href={`/gallery/${gallery._id}`}>
           <img
             style={{ width: "100%", height: "200px", objectFit: "cover" }}
