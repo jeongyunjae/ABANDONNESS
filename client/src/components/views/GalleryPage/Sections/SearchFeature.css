@@ -1,0 +1,14 @@
+.search-button {
+  margin-left: 10px;
+  width: 40px;
+  font-size: 12px;
+  height: 28px;
+  text-align: center;
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .search-button {
+    width: 60px;
+  }
+}
