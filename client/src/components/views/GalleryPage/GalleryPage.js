@@ -121,7 +121,9 @@ function GalleryPage() {
                 height: "50px",
               }}
             >
-              <button onClick={loadMoreHandler}>더보기</button>
+              <button className="moreShow-button" onClick={loadMoreHandler}>
+                더보기
+              </button>
             </div>
           )}
         </div>
